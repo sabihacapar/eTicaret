@@ -44,19 +44,16 @@
 
                 <li class="has-children ">
                     <a href="{{ route('index') }}">Category</a>
+
                     <ul class="dropdown">
-                        <li><a href="#">Menu One</a></li>
-                        <li><a href="#">Menu Two</a></li>
-                        <li><a href="#">Menu Three</a></li>
-                        <li class="has-children">
-                            <a href="#">Sub Menu</a>
-                            <ul class="dropdown">
-                                <li><a href="#">Menu One</a></li>
-                                <li><a href="#">Menu Two</a></li>
-                                <li><a href="#">Menu Three</a></li>
-                            </ul>
-                        </li>
+                        @if (!empty($categories) && $categories->count() > 0)
+                            @foreach ($categories as $category)
+                                <li><a href="#"></a>{{ $category->name }}</li>
+                            @endforeach
+                        @endif
                     </ul>
+
+
                 </li>
                 <li class="has-children">
                     <a href="{{ route('about') }}">About</a>
