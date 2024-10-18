@@ -20,6 +20,10 @@ class PageController extends Controller
     {
         return view('frontend.pages.products');
     }
+    public function saleProducts()
+    {
+        return view('frontend.pages.products');
+    }
     public function productsDetail()
     {
         return view('frontend.pages.products-detail');

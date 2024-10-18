@@ -68,7 +68,6 @@
                 </li>
                 <li><a href="{{ route('products') }}">Shop</a></li>
                 <li><a href="#">Catalogue</a></li>
-                <li><a href="#">New Arrivals</a></li>
                 <li><a href="{{ route('contact') }}">Contact</a></li>
             </ul>
         </div>

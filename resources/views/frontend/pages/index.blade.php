@@ -1,16 +1,16 @@
 @extends('frontend.layout.layout')
 
 @section('content')
-    <div class="site-blocks-cover" style="background-image: url(images/hero_1.jpg);" data-aos="fade">
+    <div class="site-blocks-cover" style="background-image: url({{ asset($sliders->image) }});" data-aos="fade">
         <div class="container">
             <div class="row align-items-start align-items-md-center justify-content-end">
                 <div class="col-md-5 text-center text-md-left pt-5 pt-md-0">
-                    <h1 class="mb-2">Finding Your Perfect Shoes</h1>
+                    <h1 class="mb-2">{{ $sliders->name ?? __('Merhaba') }}</h1>
                     <div class="intro-text text-center text-md-left">
-                        <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at
-                            iaculis quam. Integer accumsan tincidunt fringilla. </p>
+                        <p class="mb-4">{{ $sliders->content ?? __('Merhaba') }}</p>
                         <p>
-                            <a href="#" class="btn btn-sm btn-primary">Shop Now</a>
+                            <a href="{{ url('/') . '/' . $sliders->link }}" class="btn btn-sm btn-primary">Shop
+                                Now</a>
                         </p>
                     </div>
                 </div>
@@ -26,9 +26,8 @@
                         <span class="icon-truck"></span>
                     </div>
                     <div class="text">
-                        <h2 class="text-uppercase">Free Shipping</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam.
-                            Integer accumsan tincidunt fringilla.</p>
+                        <h2 class="text-uppercase">Ücretsiz Kargo</h2>
+                        <p>Ürünlerinizi güvenli bir şekilde ücretsiz teslim alabilirsiniz</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="100">
@@ -36,9 +35,8 @@
                         <span class="icon-refresh2"></span>
                     </div>
                     <div class="text">
-                        <h2 class="text-uppercase">Free Returns</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam.
-                            Integer accumsan tincidunt fringilla.</p>
+                        <h2 class="text-uppercase">Ücretsiz İade</h2>
+                        <p>Ürünlerinizi güvenli bir şekilde ücretsiz iade yapabilirsiniz</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="200">
@@ -46,9 +44,8 @@
                         <span class="icon-help"></span>
                     </div>
                     <div class="text">
-                        <h2 class="text-uppercase">Customer Support</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam.
-                            Integer accumsan tincidunt fringilla.</p>
+                        <h2 class="text-uppercase">Destek</h2>
+                        <p>Sorunlarınıza destek olmak için buradayız</p>
                     </div>
                 </div>
             </div>
@@ -59,35 +56,35 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade" data-aos-delay="">
-                    <a class="block-2-item" href="#">
+                    <a class="block-2-item" href="{{ route('women') }}">
                         <figure class="image">
                             <img src="images/women.jpg" alt="" class="img-fluid">
                         </figure>
                         <div class="text">
-                            <span class="text-uppercase">Collections</span>
-                            <h3>Women</h3>
+                            <span class="text-uppercase">Giyim</span>
+                            <h3>Kadın</h3>
                         </div>
                     </a>
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
-                    <a class="block-2-item" href="#">
+                    <a class="block-2-item" href="{{ route('children') }}">
                         <figure class="image">
                             <img src="images/children.jpg" alt="" class="img-fluid">
                         </figure>
                         <div class="text">
-                            <span class="text-uppercase">Collections</span>
-                            <h3>Children</h3>
+                            <span class="text-uppercase">Giyim</span>
+                            <h3>Çocuk</h3>
                         </div>
                     </a>
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
-                    <a class="block-2-item" href="#">
+                    <a class="block-2-item" href="{{ route('men') }}">
                         <figure class="image">
                             <img src="images/men.jpg" alt="" class="img-fluid">
                         </figure>
                         <div class="text">
-                            <span class="text-uppercase">Collections</span>
-                            <h3>Men</h3>
+                            <span class="text-uppercase">Giyim</span>
+                            <h3>Erkek</h3>
                         </div>
                     </a>
                 </div>
@@ -175,7 +172,7 @@
         <div class="container">
             <div class="row justify-content-center  mb-5">
                 <div class="col-md-7 site-section-heading text-center pt-4">
-                    <h2>Big Sale!</h2>
+                    <h2>Büyük İndirim!</h2>
                 </div>
             </div>
             <div class="row align-items-center">
@@ -184,12 +181,11 @@
                             class="img-fluid rounded"></a>
                 </div>
                 <div class="col-md-12 col-lg-5 text-center pl-md-5">
-                    <h2><a href="#">50% less in all items</a></h2>
-                    <p class="post-meta mb-4">By <a href="#">Carl Smith</a> <span
-                            class="block-8-sep">&bullet;</span> September 3, 2018</p>
+                    <h2>Tüm ürünlerde 50% indirim</h2>
+
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam iste dolor accusantium
                         facere corporis ipsum animi deleniti fugiat. Ex, veniam?</p>
-                    <p><a href="#" class="btn btn-primary btn-sm">Shop Now</a></p>
+                    <p><a href="{{ route('saleProducts') }}" class="btn btn-primary btn-sm">İndirimli Ürünler</a></p>
                 </div>
             </div>
         </div>
